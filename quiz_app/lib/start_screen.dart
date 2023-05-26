@@ -1,8 +1,8 @@
 //Package
 import 'package:flutter/material.dart';
 
-class GradientBackground extends StatelessWidget {
-  const GradientBackground({super.key});
+class StartScreen extends StatelessWidget {
+  const StartScreen({super.key});
 
   void onPressed() {}
 
