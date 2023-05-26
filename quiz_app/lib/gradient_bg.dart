@@ -15,6 +15,8 @@ class GradientBackground extends StatelessWidget {
             Color.fromARGB(255, 132, 0, 172),
             Color.fromARGB(255, 157, 76, 182)
           ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
       ),
       child: Center(
@@ -25,7 +27,7 @@ class GradientBackground extends StatelessWidget {
               height: 350,
               'assets/images/quiz-logo.png',
             ),
-            const SizedBox(height: 50),
+            const SizedBox(height: 80),
             const Text(
               'Learn Flutter the fun way!',
               style: TextStyle(
