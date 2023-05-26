@@ -8,50 +8,38 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 132, 0, 172),
-            Color.fromARGB(255, 157, 76, 182)
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              height: 350,
-              'assets/images/quiz-logo.png',
+    return (Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            height: 350,
+            'assets/images/quiz-logo.png',
+          ),
+          const SizedBox(height: 80),
+          const Text(
+            'Learn Flutter the fun way!',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
             ),
-            const SizedBox(height: 80),
-            const Text(
-              'Learn Flutter the fun way!',
+          ),
+          const SizedBox(height: 20),
+          TextButton(
+            onPressed: onPressed,
+            style: TextButton.styleFrom(
+              elevation: 8,
+              backgroundColor: const Color.fromARGB(255, 132, 0, 172),
+            ),
+            child: const Text(
+              'Start Quiz',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 24,
+                fontSize: 16,
               ),
             ),
-            const SizedBox(height: 20),
-            TextButton(
-              onPressed: onPressed,
-              style: TextButton.styleFrom(
-                elevation: 8,
-                backgroundColor: const Color.fromARGB(255, 132, 0, 172),
-              ),
-              child: const Text(
-                'Start Quiz',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                ),
-              ),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     ));
   }
