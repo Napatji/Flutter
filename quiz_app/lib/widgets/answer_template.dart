@@ -2,6 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//Components
+import 'package:quiz_app/widgets/highlight_answer.dart';
+
 class AnswerTemplate extends StatelessWidget {
   const AnswerTemplate(
       {super.key,
@@ -16,14 +19,20 @@ class AnswerTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isCorrect;
+    if (answer == correct) {
+      isCorrect = true;
+    } else {
+      isCorrect = false;
+    }
     return Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          '$number',
-          style: GoogleFonts.lato(fontSize: 20),
+        HighligthAnswer(number: number, isCorrect: isCorrect),
+        const SizedBox(
+          width: 15,
         ),
         Expanded(
           child: Column(
@@ -32,15 +41,29 @@ class AnswerTemplate extends StatelessWidget {
             children: [
               Text(
                 question,
-                style: GoogleFonts.lato(fontSize: 20),
+                style: GoogleFonts.lato(fontSize: 20, color: Colors.white),
+              ),
+              const SizedBox(
+                height: 15,
               ),
               Text(
                 answer,
-                style: GoogleFonts.lato(fontSize: 20),
+                style: GoogleFonts.lato(
+                    fontSize: 18,
+                    color: const Color.fromARGB(212, 222, 222, 222)),
+              ),
+              const SizedBox(
+                height: 10,
               ),
               Text(
                 correct,
-                style: GoogleFonts.lato(fontSize: 20),
+                style: GoogleFonts.lato(
+                    fontSize: 18,
+                    color: const Color.fromARGB(239, 255, 255, 255),
+                    fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                height: 30,
               ),
             ],
           ),
